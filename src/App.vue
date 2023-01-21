@@ -48,7 +48,9 @@
       </b-col>
     </b-row>
     <b-row class="text-center my-3">
-      <b-col> </b-col>
+      <b-col>
+        <b-button class="w-100" @click="erase">&lt;</b-button>
+      </b-col>
       <b-col>
         <b-button variant="primary" class="w-100" @click="add('0')">0</b-button>
       </b-col>
@@ -97,6 +99,15 @@ function add(numString: string) {
   const currentNumberString: string = `${currentAnswer.value ?? ""}`;
   const newNumberString = currentNumberString + numString;
   currentAnswer.value = parseInt(newNumberString);
+}
+
+function erase() {
+  const currentNumberString: string = `${currentAnswer.value ?? ""}`;
+  if (currentNumberString.length > 1) {
+    currentAnswer.value = parseInt(currentNumberString.substring(0, currentNumberString.length - 1))
+  } else {
+    currentAnswer.value = undefined;
+  }
 }
 
 const showSuccess: Ref<boolean> = ref(false);
