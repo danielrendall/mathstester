@@ -1,60 +1,62 @@
 <template>
   <b-container>
     <b-row class="text-center">
-      <b-col> {{ problemString }}{{ currentAnswer }} </b-col>
+      <b-col
+        ><h1>{{ problemString }}{{ currentAnswer }}</h1></b-col
+      >
     </b-row>
-    <b-row class="text-center">
+    <b-row class="text-center my-3">
       <b-col>
-        <b-button @click="add('7')">7</b-button>
+        <b-button variant="primary" class="w-100" @click="add('7')">7</b-button>
       </b-col>
       <b-col>
-        <b-button @click="add('8')">8</b-button>
+        <b-button variant="primary" class="w-100" @click="add('8')">8</b-button>
       </b-col>
       <b-col>
-        <b-button @click="add('9')">9</b-button>
+        <b-button variant="primary" class="w-100" @click="add('9')">9</b-button>
       </b-col>
       <b-col>
-        <b-button @click="doNothing">/</b-button>
-      </b-col>
-    </b-row>
-    <b-row class="text-center">
-      <b-col>
-        <b-button @click="add('4')">4</b-button>
-      </b-col>
-      <b-col>
-        <b-button @click="add('5')">5</b-button>
-      </b-col>
-      <b-col>
-        <b-button @click="add('6')">6</b-button>
-      </b-col>
-      <b-col>
-        <b-button @click="doNothing">*</b-button>
+        <b-button class="w-100" @click="doNothing">/</b-button>
       </b-col>
     </b-row>
-    <b-row class="text-center">
+    <b-row class="text-center my-3">
       <b-col>
-        <b-button @click="add('1')">1</b-button>
+        <b-button variant="primary" class="w-100" @click="add('4')">4</b-button>
       </b-col>
       <b-col>
-        <b-button @click="add('2')">2</b-button>
+        <b-button variant="primary" class="w-100" @click="add('5')">5</b-button>
       </b-col>
       <b-col>
-        <b-button @click="add('3')">3</b-button>
+        <b-button variant="primary" class="w-100" @click="add('6')">6</b-button>
       </b-col>
       <b-col>
-        <b-button @click="doNothing">-</b-button>
+        <b-button class="w-100" @click="doNothing">*</b-button>
       </b-col>
     </b-row>
-    <b-row class="text-center">
+    <b-row class="text-center my-3">
+      <b-col>
+        <b-button variant="primary" class="w-100" @click="add('1')">1</b-button>
+      </b-col>
+      <b-col>
+        <b-button variant="primary" class="w-100" @click="add('2')">2</b-button>
+      </b-col>
+      <b-col>
+        <b-button variant="primary" class="w-100" @click="add('3')">3</b-button>
+      </b-col>
+      <b-col>
+        <b-button class="w-100" @click="doNothing">-</b-button>
+      </b-col>
+    </b-row>
+    <b-row class="text-center my-3">
       <b-col> </b-col>
       <b-col>
-        <b-button @click="add('0')">0</b-button>
+        <b-button variant="primary" class="w-100" @click="add('0')">0</b-button>
       </b-col>
       <b-col>
-        <b-button @click="check">=</b-button>
+        <b-button variant="success" class="w-100" @click="check">=</b-button>
       </b-col>
       <b-col>
-        <b-button @click="doNothing">+</b-button>
+        <b-button class="w-100" @click="doNothing">+</b-button>
       </b-col>
     </b-row>
     <b-alert variant="success" v-model="showSuccess" dismissible="true"
